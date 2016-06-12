@@ -25,7 +25,7 @@ app.post('/processCalc', jsonParser, function(req,res) {  // sending results bac
 
 app.use(express.static('public'));  // makes public folder available
 
-var server=app.listen(8080, 'localhost', function() {  //set up server
+// set up server, process.env.PORT lets the port be set by Heroku
+var server=app.listen(process.env.PORT || 8080, function() {
    var port = server.address().port;
-  console.log('listening on port' + port);
 });
