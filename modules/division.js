@@ -1,12 +1,9 @@
-// var divresults=function() {
-//   return('in divresults function in division module');
-//   // return (x/y).toString();
-// };
-
-
 var division = {
-  divresults: function(input) {
-    return('in divresults function in division module' + input);
+  divresults: function(x, y) {
+    var z = parseInt(x) / parseInt(y);
+    console.log(z);
+    z = z.toString;
+    return z;
 }
 };
 

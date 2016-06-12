@@ -1,11 +1,10 @@
-// var subresults=function() {
-//   return('in subresults function in subtraction module');
-// };
 var subtraction = {
-  subresults: function(input) {
-    return('in subresults function in subtraction module' + input);
+  subresults: function(x, y) {
+    var z = parseInt(x) - parseInt(y);
+    console.log(z);
+    z = z.toString;
+    return z;
 }
 };
-
 
 module.exports=subtraction;

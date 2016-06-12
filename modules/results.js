@@ -22,7 +22,7 @@ switch (data.operator) {
     results=multiplication.multresults(data.x, data.y);
     break;
   case "divide":
-    console.log('in disvide');
+    console.log('in divide');
     results=division.divresults(data.x, data.y);
     break;
 }

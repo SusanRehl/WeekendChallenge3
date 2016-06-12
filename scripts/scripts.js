@@ -36,12 +36,11 @@ console.log("here is expression: " + expression);
 
 // function getResult() {
   $.ajax({
-    url: 'http://localhost:3000/processCalc',
+    url: 'http://localhost:8080/processCalc',
     method: "POST",
     data: expression,
     dataType: "json",
     success: function(data){
-      console.log('post successful' + data);
       processResponse(data);
     },
     error: function(){

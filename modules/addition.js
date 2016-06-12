@@ -1,7 +1,9 @@
-// input is string - needs to be converted to numbers Number()
 var addition = {
   addresults: function(x,y) {
-    return x + y;
+    var z = parseInt(x) + parseInt(y);
+    console.log(z);
+    z = z.toString;
+    return z;
 }
 };
 
