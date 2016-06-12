@@ -1,6 +1,7 @@
 // client-side - receiving inputs from index.html, packaging as JSON and sending via AJAX to app.js
 $(document).ready(function() {
-  startSend();  // calls function
+  startSend();  // calls function to get and process inputs
+  clearForm();
 });
 
 
@@ -50,14 +51,14 @@ var processResponse = function( response ) {  // process response and send to ou
   newParagraph.textContent = response;
   document.getElementById('outputDiv').innerHTML='';
   document.getElementById('outputDiv').appendChild( newParagraph );
-  clearForm();
+  // clearForm();
 };
 
 function clearForm() {  // clears data from form upon Clear click event
   $('#clear').on('click', function() {
     console.log("click on clearForm");
     document.getElementById('outputDiv').innerHTML='';
-    document.getElementById('input1').innerHTML='';
-    document.getElementById('input2').innerHTML='';
+    document.getElementById('input1').value='';
+    document.getElementById('input2').value='';
   });
 }
