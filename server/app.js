@@ -18,37 +18,43 @@
 //
 // Finally, build a 'clear' button that resets the whole experience.
 
-var express=required('express');
-var app=express();
-var server=app.listen(3000, 'localhost', function() {
-  console.log('listening on port 3000');
 
-});
+//sets up express
+var express=require('express');
+var app=express();
+
+
 
 var path=require('path');
 
 var bodyParser=require('body-parser');
-var urlencodeParser=bodyParser.urlencoded
-   ({extended: false});
+var urlencodedParser = bodyParser.urlencoded( { extended: false } );
+var jsonParser=bodyParser.json();
 
-app.use(express.static('public'));
+//modules
+var results=require('../modules/results.js');
+var addition=require('../modules/addition.js');
+var multiplication=require('../modules/multiplication.js');
+var subtraction=require('../modules/subtraction.js');
+var division=require('../modules/division.js');
 
 //base url
 app.get('/', function(req, res) {
-  console.log('hello from base url get');
-
+  res.sendFile(path.resolve("views/index.html"));
 });
 
-app.get('/form', function(req, res) {
-
-});
-
-app.post('/pathPost', urlencodeParser, function(req,res) {
-  res.write('postrcvd ' + req.body.input1);
-  res.write('postrcvd ' + req.body.Add);
-  res.write('postrcvd ' + req.body.Subtract);
-  res.write('postrcvd ' + req.body.Multiply);
-  res.write('postrcvd ' + req.body.Divide);
-  res.write('postrcvd ' + req.body.input2);
+//sending results back from modules
+app.post('/processCalc', jsonParser, function(req,res) {  //
+  console.log(req.body);
+  var fromModule=results(req.body);  //(req.body.data);
+  res.send(fromModule);
   res.end();
+});
+
+app.use(express.static('public'));
+
+//set up server
+var server=app.listen(8080, 'localhost', function() {
+   var port = server.address().port;
+  console.log('listening on port' + port);
 });

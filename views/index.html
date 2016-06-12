@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap.min.css" charset="utf-8">
+    <link rel="stylesheet" href="styles.css" charset="utf-8">
+    <script src="/scripts/jquery-2.2.3.min.js"></script>
+    <script src="/scripts/scripts.js"></script>
+    <!-- js
+    jquery -->
+  <title>Calculator</title>
+  </head>
+  <body align="center">
+    <h2>Calculator</h2>
+      <form action="http://localhost:8080/processCalc" method="post">
+        <input type="text" id="input1" class="inputbox" value =""/>
+        <button type="button" id="adding" class="btn btn-success"/>+</button>
+        <button type="button" id="subtracting" class="btn btn-success"/>-</button>
+        <button type="button" id="multiplying" class="btn btn-success"/>*</button>
+        <button type="button" id="dividing" class="btn btn-success"/>/</button>
+        <input type="text" id="input2" class="inputbox" value=""/><br />
+        <input type="button" value="Submit" id="submit" class="btn btn-primary"/>
+        <button type="button" id="Clear" class="btn btn-primary"/>Clear</button>
+      </form>
+      <div id="outputDiv"></div>
+  </body>
+</html>
