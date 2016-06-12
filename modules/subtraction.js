@@ -1,8 +1,7 @@
-var subtraction = {
+var subtraction = {  // process subtraction
   subresults: function(x, y) {
-    var z = parseInt(x) - parseInt(y);
-    console.log(z);
-    z = z.toString;
+    var z = parseInt(x) - parseInt(y);  // sets strings to numbers
+    z = z.toString(); // sets number result to string
     return z;
 }
 };

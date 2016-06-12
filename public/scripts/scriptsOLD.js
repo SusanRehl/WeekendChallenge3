@@ -3,7 +3,6 @@ $(document).ready(function() {
   startSend();  // calls function
 });
 
-
 function startSend() {  // takes input values, operator button click and assigns to vars, passes to object
   var operator = "";
   $('#adding').on('click', function(){
@@ -27,7 +26,7 @@ function startSend() {  // takes input values, operator button click and assigns
       y: argTwo,
       operator: operator
     };
-  //  }); // end submit on click function
+   }); // end submit on click function
 
     $.ajax({   // ajax request via post method
       url: 'http://localhost:8080/processCalc',
@@ -42,8 +41,7 @@ function startSend() {  // takes input values, operator button click and assigns
         alert('Error accessing stuff');
       }
     });  // ends ajax request
-  });  // ends on clidk submit
-}  // end startSend function
+  } // end startSend function
 
 var processResponse = function( response ) {  // process response and send to outputDiv
   var newParagraph = document.createElement('p');
