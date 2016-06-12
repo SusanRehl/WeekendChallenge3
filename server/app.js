@@ -27,5 +27,5 @@ app.use(express.static('public'));  // makes public folder available
 
 // set up server, process.env.PORT lets the port be set by Heroku
 var server=app.listen(process.env.PORT || 8080, function() {
-   var port = server.address().port;
+  //  var port = server.address().port;
 });
