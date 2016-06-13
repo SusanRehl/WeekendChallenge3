@@ -31,7 +31,7 @@ function startSend() {  // takes input values, operator button click and assigns
   //  }); // end submit on click function
 
     $.ajax({   // ajax request via post method
-      url: 'http://localhost:8080/processCalc',
+      url: 'http://processCalc',
       method: "POST",
       data: JSON.stringify(expression),
       dataType: "json",
