@@ -1,4 +1,5 @@
 
+//server
 var express=require('express');  // sets up express
 var app=express();
 
@@ -26,4 +27,5 @@ app.post('/processCalc', jsonParser, function(req,res) {  // sending results bac
 app.use(express.static('public'));  // makes public folder available
 
 // set up server, process.env.PORT lets the port be set by Heroku
-var server=app.listen(process.env.PORT || 8080, function() {});  //THIS WAS WORKING PERFECTLY LOCALLY WITH localhost. Thanks alot Heroku :(
+var server=app.listen(process.env.PORT || 3000, function() {});
+// var server=app.listen('localhost', 8080, function() {});  THIS WAS WORKING PERFECTLY LOCALLY

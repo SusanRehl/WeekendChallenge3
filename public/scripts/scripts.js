@@ -28,10 +28,10 @@ function startSend() {  // takes input values, operator button click and assigns
       y: argTwo,
       operator: operator
     };
-  //  }); // end submit on click function
+   // end submit on click function
 
     $.ajax({   // ajax request via post method
-      url: 'http://processCalc',
+      url: '/processCalc',   // url: 'http://localhost:8080/processCalc', was working perfectly locally
       method: "POST",
       data: JSON.stringify(expression),
       dataType: "json",
@@ -61,4 +61,4 @@ function clearForm() {  // clears data from form upon Clear click event
     document.getElementById('input1').value='';
     document.getElementById('input2').value='';
   });
-}
+} // end of cleanform function
