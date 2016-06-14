@@ -1,11 +1,10 @@
 // client-side - receiving inputs from index.html, packaging as JSON and sending via AJAX to app.js
 $(document).ready(function() {
   startSend();  // calls function to get and process inputs
-  clearForm();
+  clearForm();   // calls clearForm function to reset fields
 });
 
-
-function startSend() {  // takes input values, operator button click and assigns to vars, passes to object
+function startSend() {  // takes input values, operator button click and assigns to vars, passes to object, sends object to server
   var operator = "";
   $('#adding').on('click', function(){
     operator='plus';
@@ -28,10 +27,9 @@ function startSend() {  // takes input values, operator button click and assigns
       y: argTwo,
       operator: operator
     };
-   // end submit on click function
 
     $.ajax({   // ajax request via post method
-      url: '/processCalc',   // url: 'http://localhost:8080/processCalc', was working perfectly locally
+      url: '/processCalc',
       method: "POST",
       data: JSON.stringify(expression),
       dataType: "json",
@@ -46,17 +44,15 @@ function startSend() {  // takes input values, operator button click and assigns
   });  // ends on clidk submit
 }  // end startSend function
 
-var processResponse = function( response ) {  // process response and send to outputDiv
+var processResponse = function( response ) {  // process response and sends to outputDiv
   var newParagraph = document.createElement('p');
   newParagraph.textContent = response;
   document.getElementById('outputDiv').innerHTML='';
   document.getElementById('outputDiv').appendChild( newParagraph );
-  // clearForm();
 };
 
 function clearForm() {  // clears data from form upon Clear click event
   $('#clear').on('click', function() {
-    console.log("click on clearForm");
     document.getElementById('outputDiv').innerHTML='';
     document.getElementById('input1').value='';
     document.getElementById('input2').value='';
